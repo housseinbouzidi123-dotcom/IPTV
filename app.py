@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route("/", defaults={"path": ""})
 @app.route("/<path:path>")
 def s(path):
-    link = request.args.get("url")
+    link = request.args.get("http://217.60.253.206:8080/WFJobG5hOCtUSHh5VVpDQWJmL2tsemtuQ0VtMEFLbjh1aUZXUzNaUWRsUEs0MXJBS2VweW13L2ljbHVUWE11cDB4em1ZQU8wOWRTTlFLNjRPa2pSaVIyTFRPSStQRTZIWlBENEREclBXbmpPazNjRkZBNzJJRkNaVko3aUZmRVY3UjRqYUpXUWlaT1B5RVoyakFrL3Nra0lQaytRdDVmdktpcFdydzNyaTBTVkZIM3U1dVNCSWJBd01ZenFZYzZRQ1FjUGUxVmd4Wjg1alFoY3hpVnRjQjNVTCtEOEU5YVlHVUs3T0RLRkVtZ1I3Qk9aN1pTdFFlWGdrZi9YL1FtN3hzaWM5MGhla2pzYjRFZklNdGxzMTN0N29XV2hodkJLb3NBcy9JK3lqQ2lKdCs1cXBDYnZ3VHRXL2pmQnhNQmZyd2NEdjE2RnhrWlF4Y0EzaWxZZmp3PT0")
     if not link:
         return "سيرفر البث المباشر يعمل بنجاح! ضَع رابط القناة بعد علامة الـ =", 200
         
