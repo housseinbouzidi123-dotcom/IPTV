@@ -3,10 +3,14 @@ from flask import Flask, Response, request
 
 app = Flask(__name__)
 
-@app.route("/stream")
-def s():
-    # هذا السطر يستقبل أي رابط طويل مشفر تضعه في تطبيقك ويمرره للمشاهدين
+# تعديل المسار ليعمل كالمسار الرئيسي للموقع وتجنب خطأ الـ Not Found
+@app.route("/", defaults={"path": ""})
+@app.route("/<path:path>")
+def s(path):
     link = request.args.get("url")
+    if not link:
+        return "سيرفر البث المباشر يعمل بنجاح! ضَع رابط القناة بعد علامة الـ =", 200
+        
     headers = {"User-Agent": "VLC/3.0.18"}
     
     def generate():
